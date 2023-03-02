@@ -30,6 +30,10 @@ button:hover {
   transform: scale(0.95);
 }
 
+.btn-color {
+  background-color: #fc00ff;
+}
+
 /* list */
 .input-btn {
   padding: 0.3rem;
@@ -52,17 +56,19 @@ ul {
 }
 .list {
   display: flex;
+  width: inherit;
+  height: 5rem;
+  text-decoration: none;
   justify-content: space-between;
   align-items: center;
-  /* border: 2px solid red; */
-  width: inherit;
-  padding-left: .5rem;
-  height: 5rem;
-  /* height: 4rem; */
 }
 .script {
-  /* border: 2px solid red !important; */
-  height: inherit;
-  width: 8px;
+  height: 5rem;
+  width: 14px;
   background-color: #fc00ff;
+}
+.icon {
+  text-align: right !important;
+  margin-right: 0.2rem;
+ margin-top: .2rem;
 }

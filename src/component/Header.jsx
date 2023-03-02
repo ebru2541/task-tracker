@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import AddTask from "./AddTask";
-import List from "./List";
+import Button from "./Button";
+import Tasks from "./Tasks";
 
 const Header = () => {
+  const [show, setShow] = useState(true);
+  const [data, setData] = useState([]);
   return (
     <div className="container">
       <h3 className="text-center">Task Tracker</h3>
-      <button
-        type="submit"
-        className="text-center m-auto p-1 rounded-1 d-flex border border-none text-light "
-      >
-        Show and task Bar
-      </button>
-      <p className="text-center ">No tasks to show...</p>
-      <List />
-      <AddTask />
+      <Button show={show} setShow={setShow} />
+      {show || <p className="text-center ">No tasks to show...</p>}
+      {show && <Tasks data={data} setData={setData} />}
+      {data.length>0 &&  <AddTask data={data} setData={setData} show={show} setShow={setShow} />}
     </div>
   );
 };

@@ -1,6 +1,12 @@
-const data = [
+export const data = [
   {
     task: "Form-App",
-    date: toLocaleDateString(),
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+  },
+  {
+    task: "Task Tracker",
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
   },
 ];
