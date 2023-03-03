@@ -17,7 +17,8 @@ const Tasks = ({ data, setData }) => {
         clicked: true,
       },
     ]);
-    console.log(data);
+    setTask("");
+    setDay("");
   };
   return (
     <div className="m-auto">
@@ -46,7 +47,7 @@ const Tasks = ({ data, setData }) => {
           placeholder="Add day & Time"
         ></input>
       </form>
-    { (data.length< 1) && <p className="text-center">No task to show...</p>}
+      {data.length < 1 && <p className="text-center">No task to show...</p>}
     </div>
   );
 };
