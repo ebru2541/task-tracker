@@ -8,7 +8,7 @@ const Header = () => {
   const [data, setData] = useState([]);
   return (
     <div className="container">
-      <h3 className="text-center">Task Tracker</h3>
+      <h3 className="text-center  title">Task Tracker</h3>
       <Button show={show} setShow={setShow} />
       {show || <p className="text-center ">No tasks to show...</p>}
       {show && <Tasks data={data} setData={setData} />}

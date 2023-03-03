@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
-const AddTask = ({ data, setData, show, setShow }) => {
-  const [click, setClick] = useState(true);
+
+const AddTask = ({ data, setData}) => {
+
 
   const handleDoubleClick = (id) => {
     setData(
@@ -15,7 +15,14 @@ const AddTask = ({ data, setData, show, setShow }) => {
           : item
       )
     );
+    console.log(data)
   };
+
+  const handleDeleteClick = (id) => {
+    
+    setData(data.filter((item) => item.id !== id));
+  };
+
   return (
     <div>
       {data.map((item) => {
@@ -24,22 +31,20 @@ const AddTask = ({ data, setData, show, setShow }) => {
           <ul key={id}>
             <li className="list" onDoubleClick={() => handleDoubleClick(id)}>
               <div className="d-flex">
-                <div className={click ? "d-none" : "script"}></div>
+                <div className={clicked ? "d-none" : "script"}></div>
                 <div>
                   <p
                     className={
                       clicked
                         ? " fs-4 p-1"
-                        : "fs-4 text-decoration-line-through text-danger text-left"
+                        : "fs-4 text-decoration-line-through text-left"
                     }
                   >
                     {task}
                   </p>
                   <p
                     className={
-                      click
-                        ? "m-1"
-                        : "m-1 text-decoration-line-through text-danger"
+                      clicked ? "m-1" : "m-1 text-decoration-line-through "
                     }
                   >
                     {day} / {date}pm
@@ -47,7 +52,9 @@ const AddTask = ({ data, setData, show, setShow }) => {
                 </div>
               </div>
 
-              <div className="icon ">❌</div>
+              <div className="icon " role="button" onClick={() => handleDeleteClick(id)}>
+                ❌
+              </div>
             </li>
           </ul>
         );
