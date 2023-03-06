@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Tasks = ({ data, setData }) => {
+const Tasks = ({ setData,data }) => {
   const [task, setTask] = useState("");
   const [day, setDay] = useState("");
 
@@ -19,6 +19,7 @@ const Tasks = ({ data, setData }) => {
     ]);
     setTask("");
     setDay("");
+ 
   };
   return (
     <div className="m-auto">
