@@ -30,7 +30,7 @@
 
 ## Expected Outcome
 
-![Project 003 Snapshot](task-tracker.gif)
+![task](task-tracker.gif)
 
 ## Skills
 
